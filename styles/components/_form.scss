@@ -113,7 +113,7 @@
     @extend .twelve;
     @extend .columns;
 
-    padding: 10px 0 20px 20px;
+    padding: 10px 0 0px 20px;
 
     label {
       font-size: 15px;
@@ -163,6 +163,8 @@
   }
 
   .offerInformation {
+    padding-bottom: 0px;
+
     .price {
       font-size: 20px;
       font-weight: bold;
@@ -196,6 +198,14 @@
       font-size: 28px;
       padding: 10px 50px;
       height: unset;
+    }
+
+    .buttonRow {
+      padding-bottom: 0px;
+    }
+
+    .buttonColumn {
+      padding: 10px 20px 0 20px;
     }
   }
 

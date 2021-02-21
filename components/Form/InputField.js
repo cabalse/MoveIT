@@ -33,6 +33,7 @@ export default function InputField(props) {
               type="radio"
               value="Ja"
               ref={props.formRef}
+              checked={props.preview && props.preview.data[props.id] === "Ja"}
             />
           </div>
           <div className="radioGroup">
@@ -43,6 +44,7 @@ export default function InputField(props) {
               type="radio"
               value="Nej"
               ref={props.formRef}
+              checked={props.preview && props.preview.data[props.id] === "Nej"}
             />
           </div>
         </div>

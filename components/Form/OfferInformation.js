@@ -2,7 +2,7 @@ export default function OfferInformation(props) {
   return (
     <div className="offerInformation">
       <div className="row">
-        <div className="eight columns">
+        <div className="twelve columns">
           <div className="price">{props.preview.data.price}</div>
           <div className="distance">{props.preview.data.distance}</div>
           <div className="info">
@@ -21,8 +21,10 @@ export default function OfferInformation(props) {
             </div>
           </div>
         </div>
-        <div className="four columns">
-          <button className="u-pull-right button" type="submit">
+      </div>
+      <div className="row buttonRow">
+        <div className="twelve columns buttonColumn">
+          <button className="button u-pull-right" type="submit">
             Godkänn offert
           </button>
         </div>
