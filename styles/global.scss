@@ -1,0 +1,20 @@
+@import "vendors/skeleton-sass-2.0.4/skeleton.scss";
+@import "./utils";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@import "./pages/quotation_request";
+@import "./pages/quotation_response";
+@import "./components/Form";

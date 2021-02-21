@@ -1,0 +1,12 @@
+.quotation_response {
+  .title {
+    @extend .twelve;
+    @extend .columns;
+
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      padding-left: 20px;
+    }
+  }
+}

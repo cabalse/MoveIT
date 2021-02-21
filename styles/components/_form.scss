@@ -1,0 +1,135 @@
+@import "vendors/skeleton-sass-2.0.4/base/_variables";
+@import "vendors/skeleton-sass-2.0.4/base/_utils";
+@import "vendors/skeleton-sass-2.0.4/modules/_grid";
+@import "../_utils";
+
+.form {
+  .section {
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+  }
+
+  .header {
+    @extend .twelve;
+    @extend .columns;
+
+    height: 60px;
+    background-color: $color-third;
+    font-size: 28px;
+    font-weight: bolder;
+    padding: 10px 0 10px 20px;
+    position: relative;
+
+    .indicator {
+      height: 60px;
+      width: 60px;
+      background-color: $color-primary;
+      position: absolute;
+      top: 0px;
+      left: -60px;
+
+      span {
+        @extend .u-center-abs;
+        color: white;
+      }
+    }
+
+    .text {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translateY(-50%) translateX(-50%);
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
+
+  .inputRow {
+    @extend .row;
+    background-color: $color-secondary;
+  }
+
+  .inputColumn {
+    @extend .six;
+    @extend .columns;
+
+    &:first-child {
+      padding: 10px 0 0 20px;
+    }
+
+    &:last-child {
+      padding: 10px 20px 0 0;
+    }
+
+    label {
+      font-size: 15px;
+      text-transform: uppercase;
+
+      .required {
+        color: black;
+      }
+
+      .error {
+        margin-left: 10px;
+        font-size: 10px;
+        color: red;
+      }
+    }
+
+    input {
+      border-radius: 0px;
+      height: 50px;
+    }
+
+    .radioGroupRow {
+      display: flex;
+      flex-direction: row;
+
+      .radioGroup {
+        display: flex;
+        flex-direction: row;
+
+        label {
+          padding-top: 13px;
+          margin-right: 10px;
+        }
+
+        input {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .preview {
+      height: 50px;
+      background-color: $color-third;
+      padding: 10px 20px 10px 20px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .submitRow {
+    @extend .row;
+    margin-top: 30px;
+  }
+
+  .submitColumn {
+    @extend .twelve;
+    @extend .columns;
+
+    .button {
+      background-color: $color-primary;
+      border: none;
+      border-radius: 0;
+      color: white;
+      text-decoration: unset;
+      text-transform: unset;
+      text-align: center;
+      display: inline-block;
+      font-size: 28px;
+      padding: 10px 50px;
+      height: unset;
+    }
+  }
+}
