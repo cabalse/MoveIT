@@ -1,3 +1,4 @@
+import OfferInformation from "./OfferInformation";
 import { controllerType } from "components/formStructure";
 
 export default function InputField(props) {
@@ -57,6 +58,9 @@ export default function InputField(props) {
         </p>
       );
       displayLabel = false;
+      break;
+    case controllerType.offerInformation:
+      controller = <OfferInformation {...props} />;
       break;
     default:
       break;

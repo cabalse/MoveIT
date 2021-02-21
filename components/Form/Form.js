@@ -26,26 +26,30 @@ export default function Form(props) {
           {formStructure.map((section) =>
             displaySection(section.head.previewOnly, props.preview) ? (
               <div className="section" key={section.head.title}>
-                <Section {...section.head} preview={props.preview} />
-                <InputRows
-                  inputs={section.inputs}
-                  register={register}
-                  errors={errors}
-                  preview={props.preview}
-                />
+                <Section {...section.head} preview={props.preview}>
+                  <InputRows
+                    inputs={section.inputs}
+                    register={register}
+                    errors={errors}
+                    preview={props.preview}
+                    columns={section.head.columns ? section.head.columns : 2}
+                  />
+                </Section>
               </div>
             ) : null
           )}
         </div>
-        <div className="container">
-          <div className="submitRow">
-            <div className="submitColumn">
-              <button className="u-pull-right button" type="submit">
-                Skicka in offertförfrågan
-              </button>
+        {!props.preview ? (
+          <div className="container">
+            <div className="submitRow">
+              <div className="submitColumn">
+                <button className="u-pull-right button" type="submit">
+                  Skicka in offertförfrågan
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </form>
   );

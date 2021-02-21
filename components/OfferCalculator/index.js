@@ -16,3 +16,25 @@ export async function offerCalculator(
     price: price.rate,
   };
 }
+
+export function composeOfferInformation(id, price, distance) {
+  const info = {
+    price: "Uppskattat pris: " + price + " kr inkl moms",
+    distance: "Totalt avstånd mellan bostäder: " + distance + " km",
+    info: {
+      period: "Offert gäller i 90 dagar utifrån vårt svar till dig.",
+      contact: {
+        text: "Vid frågor kontakta ",
+        email: "flytt@move-it.se",
+        linkText: "flytt@move-it.se",
+      },
+      offerLink: {
+        text: "För att se offerten igen klicka här: ",
+        url: "move-it.se/offert/" + id,
+        linkText: "move-it.se/offert/" + id,
+      },
+    },
+  };
+
+  return info;
+}

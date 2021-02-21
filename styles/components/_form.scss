@@ -109,6 +109,96 @@
     }
   }
 
+  .inputColumnFull {
+    @extend .twelve;
+    @extend .columns;
+
+    padding: 10px 0 20px 20px;
+
+    label {
+      font-size: 15px;
+      text-transform: uppercase;
+
+      .required {
+        color: black;
+      }
+
+      .error {
+        margin-left: 10px;
+        font-size: 10px;
+        color: red;
+      }
+    }
+
+    input {
+      border-radius: 0px;
+      height: 50px;
+    }
+
+    .radioGroupRow {
+      display: flex;
+      flex-direction: row;
+
+      .radioGroup {
+        display: flex;
+        flex-direction: row;
+
+        label {
+          padding-top: 13px;
+          margin-right: 10px;
+        }
+
+        input {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .preview {
+      height: 50px;
+      background-color: $color-third;
+      padding: 10px 20px 10px 20px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .offerInformation {
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .distance {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .info {
+      .period {
+      }
+      .contact {
+      }
+      .offerLink {
+      }
+    }
+
+    .button {
+      background-color: $color-primary;
+      border: none;
+      border-radius: 0;
+      color: white;
+      text-decoration: unset;
+      text-transform: unset;
+      text-align: center;
+      display: inline-block;
+      font-size: 28px;
+      padding: 10px 50px;
+      height: unset;
+    }
+  }
+
   .submitRow {
     @extend .row;
     margin-top: 30px;

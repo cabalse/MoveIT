@@ -1,10 +1,13 @@
 import Layout, { siteTitle } from "components/Layout";
+import {
+  composeOfferInformation,
+  offerCalculator,
+} from "../components/OfferCalculator";
 import { useEffect, useState } from "react";
 
 import Form from "components/Form";
 import FormPageLayout from "components/FormPageLayout";
 import Head from "next/head";
-import { offerCalculator } from "../components/OfferCalculator";
 import { useFormData } from "components/FormData";
 
 export default function QuotationResponse() {
@@ -23,13 +26,9 @@ export default function QuotationResponse() {
         ...data,
         data: {
           ...inputData,
-          price: "Uppskattat pris: " + data.price + " kr inkl moms",
-          distance: "Totalt avstånd mellan bostäder: " + data.distance + " km",
-          info:
-            "Offert gäller i 90 dagar utifrån vårt svar till dig.<br/>Vid frågor kontakta <a href='mailto:flytt@move-it.se'>flytt@move-it.se</a><br/><br/>För att se offerten igen klicka här: <a href=''>move-it.se/offert/XXXXX</a>",
+          ...composeOfferInformation(data.id, data.price, data.distance),
         },
       };
-      console.log(res);
       setOfferResult(res);
     });
   }, [inputData]);
@@ -43,7 +42,10 @@ export default function QuotationResponse() {
         title={"Offertförslag " + offerResult.id + " för bohagsflytt"}
         class="quotation_response"
       >
-        <Form preview={{ show: true, data: offerResult.data }} />
+        <Form
+          preview={{ show: true, data: offerResult.data }}
+          nextStep="/thanks"
+        />
       </FormPageLayout>
     </Layout>
   ) : null;

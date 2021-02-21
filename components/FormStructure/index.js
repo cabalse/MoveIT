@@ -4,6 +4,7 @@ export const controllerType = Object.freeze({
   radio: 2,
   label: 3,
   submit: 4,
+  offerInformation: 5,
 });
 
 export const formStructure = [
