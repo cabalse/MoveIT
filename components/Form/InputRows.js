@@ -1,5 +1,13 @@
 import InputField from "./InputField";
 
+function createValidation(control) {
+  let output = {};
+  if (control.required) output = { ...output, required: true };
+  if (control.pattern) output = { ...output, pattern: control.pattern };
+  console.log(output);
+  return output;
+}
+
 export default function InputRows(props) {
   var rows = [],
     pairs = [];
@@ -15,9 +23,7 @@ export default function InputRows(props) {
               <div className="inputColumn">
                 <InputField
                   {...first}
-                  formRef={props.register(
-                    first.required ? { required: true } : null
-                  )}
+                  formRef={props.register(createValidation(first))}
                   error={props.errors[first.id]}
                   preview={props.preview}
                 />
@@ -25,9 +31,7 @@ export default function InputRows(props) {
               <div className="inputColumn">
                 <InputField
                   {...second}
-                  formRef={props.register(
-                    second.required ? { required: true } : null
-                  )}
+                  formRef={props.register(createValidation(second))}
                   error={props.errors[second.id]}
                   preview={props.preview}
                 />
@@ -43,9 +47,7 @@ export default function InputRows(props) {
             <div className="inputColumnFull">
               <InputField
                 {...input}
-                formRef={props.register(
-                  input.required ? { required: true } : null
-                )}
+                formRef={props.register(createValidation(input))}
                 error={props.errors[input.id]}
                 preview={props.preview}
               />

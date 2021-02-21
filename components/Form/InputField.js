@@ -76,7 +76,13 @@ export default function InputField(props) {
         <label htmlFor={props.id}>
           {props.title}
           {props.required && <span className="required">*</span>}
-          {props.error && <span className="error">Required</span>}
+          {props.error && (
+            <span className="error">
+              {props.error.type === "required"
+                ? "Måste fyllas i!"
+                : props.error.message}
+            </span>
+          )}
         </label>
       ) : null}
       {controller}
