@@ -4,7 +4,6 @@ function createValidation(control) {
   let output = {};
   if (control.required) output = { ...output, required: true };
   if (control.pattern) output = { ...output, pattern: control.pattern };
-  console.log(output);
   return output;
 }
 

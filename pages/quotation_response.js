@@ -31,22 +31,30 @@ export default function QuotationResponse() {
       };
       setOfferResult(res);
     });
-  }, [inputData]);
+  }, []);
 
-  return offerResult ? (
+  return (
     <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <FormPageLayout
-        title={"Offertförslag " + offerResult.id + " för bohagsflytt"}
-        class="quotation_response"
-      >
-        <Form
-          preview={{ show: true, data: offerResult.data }}
-          nextStep="/thanks"
-        />
-      </FormPageLayout>
+      {offerResult ? (
+        <FormPageLayout
+          title={"Offertförslag " + offerResult.id + " för bohagsflytt"}
+          class="quotation_response"
+        >
+          <Form
+            preview={{ show: true, data: offerResult.data }}
+            nextStep="/thanks"
+          />
+        </FormPageLayout>
+      ) : (
+        <div className="container">
+          <div className="row">
+            <div className="twelve columns">Laddar information ...</div>
+          </div>
+        </div>
+      )}
     </Layout>
-  ) : null;
+  );
 }

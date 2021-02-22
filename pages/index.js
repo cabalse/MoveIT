@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
       <div className="container">
         <div className="row">
-          <div className="twelve columns">Welcome to Move IT Website</div>
+          <div className="twelve columns">Välkommen till Move IT</div>
           <Link href="/quotation_request">Offert förfrågan</Link>
         </div>
       </div>
